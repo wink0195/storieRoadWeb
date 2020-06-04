@@ -28,11 +28,11 @@ export default class Navbar extends Component {
             <a href="/" className="navbar-item">
               Home
             </a>
-            <a href="/products" className="navbar-item">
-              Products
+            <a href="/projects" className="navbar-item">
+              Projects
             </a>
             <a href="/admin" className="navbar-item">
-              Admin
+              Add Project
             </a>
             <a href="https://mailchi.mp/85ec44736fc5/subscribeforupdates" target="_blank" className="navbar-item">
               Newsletter

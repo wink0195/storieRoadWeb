@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Products from './components/Products';
-import ProductAdmin from './components/ProductAdmin';
+import Projects from './components/Projects';
+import ProjectAdd from './components/ProjectAdd';
 import LogIn from './components/auth/LogIn';
 import Register from './components/auth/Register';
 import ForgotPassword from './components/auth/ForgotPassword';
@@ -64,8 +64,8 @@ class App extends Component {
             <Navbar auth={authProps} /> 
             <Switch>
               <Route exact path="/" render={(props) => <Home {...props} auth={authProps} />} />
-              <Route exact path="/products" render={(props) => <Products {...props} auth={authProps} />} />
-              <Route exact path="/admin" render={(props) => <ProductAdmin {...props} auth={authProps} />} />
+              <Route exact path="/projects" render={(props) => <Projects {...props} auth={authProps} />} />
+              <Route exact path="/admin" render={(props) => <ProjectAdd {...props} auth={authProps} />} />
               <Route exact path="/login" render={(props) => <LogIn {...props} auth={authProps} />} />
               <Route exact path="/register" render={(props) => <Register {...props} auth={authProps} />} />
               <Route exact path="/forgotpassword" render={(props) => <ForgotPassword {...props} auth={authProps} />} />

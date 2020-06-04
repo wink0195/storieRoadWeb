@@ -1,14 +1,14 @@
 import React, { Component, Fragment }  from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default class ProductAdmin extends Component {
+export default class ProjectAdmin extends Component {
 
   state = {
     isEditMode: false,
-    updatedproductname: this.props.name
+    updatedprojectname: this.props.name
   }
 
-  handleProductEdit = event => {
+  handleProjectEdit = event => {
     event.preventDefault();
     this.setState({ isEditMode: true });
   }
@@ -16,10 +16,10 @@ export default class ProductAdmin extends Component {
   handleEditSave = event => {
     event.preventDefault();
     this.setState({ isEditMode: false });
-    this.props.handleUpdateProduct(this.props.id, this.state.updatedproductname);
+    this.props.handleUpdateProject(this.props.id, this.state.updatedprojectname);
   }
 
-  onAddProductNameChange = event => this.setState({ "updatedproductname": event.target.value });
+  onAddProjectNameChange = event => this.setState({ "updatedprojectname": event.target.value });
 
   render() {
     return (
@@ -27,32 +27,32 @@ export default class ProductAdmin extends Component {
         {
           this.props.isAdmin && 
           <Fragment>
-            <a href="/" onClick={this.handleProductEdit} className="product-edit-icon">
+            <a href="/" onClick={this.handleProjectEdit} className="project-edit-icon">
               <FontAwesomeIcon icon="edit" />
             </a>
-            <button onClick={event => this.props.handleDeleteProduct(this.props.id, event)} className="delete"></button>
+            <button onClick={event => this.props.handleDeleteProject(this.props.id, event)} className="delete"></button>
           </Fragment>
         }
         {
           this.state.isEditMode 
           ? <div>
-              <p>Edit product name</p>
+              <p>Edit project name</p>
               <input 
                 className="input is-medium"
                 type="text" 
                 placeholder="Enter name"
-                value={this.state.updatedproductname}
-                onChange={this.onAddProductNameChange}
+                value={this.state.updatedprojectname}
+                onChange={this.onAddProjectNameChange}
               />
-              <p className="product-id">id: { this.props.id }</p>
+              <p className="project-id">id: { this.props.id }</p>
               <button type="submit" 
                 className="button is-info is-small"
                 onClick={ this.handleEditSave }
               >save</button>
             </div>
           : <div>
-              <p className="product-title">{ this.props.name }</p>
-              <p className="product-id">id: { this.props.id }</p>
+              <p className="project-title">{ this.props.name }</p>
+              <p className="project-id">id: { this.props.id }</p>
             </div>
         }
       </div>
