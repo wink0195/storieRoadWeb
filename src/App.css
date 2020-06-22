@@ -101,3 +101,20 @@ body {
 /* .wrapper > div:nth-child(odd) {
   background: #ddd;
 } */
+
+div.MuiInputBase-root {
+  display: block;
+}
+
+.center-form {
+  display: inline-block;
+  min-width: 84em;
+}
+
+body {
+  text-align: center;
+}
+
+.center-form {
+  text-align: left;
+}

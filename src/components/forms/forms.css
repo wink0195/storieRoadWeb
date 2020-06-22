@@ -1,7 +1,7 @@
 .my-form {
   margin: 1em;
   background: whitesmoke;
-  max-width: 84em;
+  /* max-width: 84em; */
   align-content: center;
 }
 
@@ -32,4 +32,12 @@ label {
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+body {
+  text-align: center;
+}
+
+.center-form {
+  text-align: left;
 }
