@@ -94,7 +94,7 @@ export default class ProjectAdd extends Component {
                       <input 
                         className="input is-medium"
                         type="text" 
-                        placeholder="Enter name"
+                        placeholder="Project Name"
                         value={this.state.newproject.projectname}
                         onChange={this.onAddProjectNameChange}
                       />

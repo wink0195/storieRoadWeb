@@ -1,0 +1,35 @@
+.my-form {
+  margin: 1em;
+  background: whitesmoke;
+  max-width: 84em;
+  align-content: center;
+}
+
+pre {
+  background: #cecece;
+}
+
+label {
+  font-weight: bold;
+  font-size: 13px;
+  display: block;
+  float: left 1px;
+}
+
+.space {
+  display: auto;
+}
+
+.sp-below {
+  margin-bottom: 1em;
+}
+
+.three-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
