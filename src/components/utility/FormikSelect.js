@@ -9,16 +9,13 @@ import Select from '@material-ui/core/Select'
 // export const Fstyles = styled.div
 
 const FormikSelectStyle = {
-  margin: '0px'
-}
-
-const selectDd = {
-  width: '10em'
+  margin: '0px',
+  width: 'inherit'
 }
 
 const MaterialUISelectField = ({ errorString, label, children, value, name, onChange, onBlur, required }) => {
   return (
-    <FormControl style={selectDd}>
+    <FormControl style={{ width: '100%' }}>
       <InputLabel required={required}>{label}</InputLabel>
       <Select name={name} onChange={onChange} onBlur={onBlur} value={value}>
         {children}

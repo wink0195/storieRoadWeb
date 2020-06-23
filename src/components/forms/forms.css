@@ -1,5 +1,6 @@
 .my-form {
-  margin: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   background: whitesmoke;
   /* max-width: 84em; */
   align-content: center;
@@ -40,4 +41,23 @@ body {
 
 .center-form {
   text-align: left;
+}
+
+.form-header {
+  background-color: #350e16;
+  color: white;
+  /* background: maroon; */
+}
+
+.inside-form {
+  padding: 0.5em;
+}
+
+.divider {
+  color: red;
+  border: none;
+  display: block;
+  line-height: 1.1876em;
+  margin: 1.5rem 0;
+  box-sizing: inherit;
 }

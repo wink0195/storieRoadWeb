@@ -66,6 +66,8 @@ body {
 
 .hero-body {
   background-color: #350e16;
+  height: fit-content;
+  padding: 0;
 }
 
 .container2 {
@@ -79,6 +81,7 @@ body {
   /* grid-column-gap: 1em;
   grid-row-gap: 1em; */
   grid-gap: 0.5em;
+
   /* grid-auto-rows: minmax(150px, auto); */
 }
 
@@ -111,10 +114,23 @@ div.MuiInputBase-root {
   min-width: 84em;
 }
 
-body {
-  text-align: center;
+.shift-left {
+  justify-self: left;
 }
 
-.center-form {
-  text-align: left;
+.bg_button {
+  fill: #b81c34;
+}
+
+.divider {
+  color: black;
+  border: none;
+  display: block;
+  line-height: 1.1876em;
+  margin: 1.5rem 0;
+  box-sizing: inherit;
+}
+
+.MuiSelect-selectMenu {
+  width: inherit;
 }

@@ -28,7 +28,7 @@ export default class Navbar extends Component {
               Home
             </a>
             <a href="/CreatorBackground" className="navbar-item">
-              MyBackground
+              MyAccount
             </a>
             <a href="/projects" className="navbar-item">
               Projects
