@@ -222,11 +222,11 @@ function CreatorBackgroundForm() {
                   </div>
                 </div>
 
-                <div class="sp-below">
-                  <button disabled={isSubmitting} type="submit" class=".center-form">
+                <div class="sp-below" class="center-form">
+                  <Button type="submit" disabled={isSubmitting}>
                     Submit
-                  </button>
-                  <button type="reset">Clear</button>
+                  </Button>
+                  <Button type="reset">Clear</Button>
                 </div>
               </div>
 
