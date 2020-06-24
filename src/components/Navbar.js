@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
 import { Auth } from 'aws-amplify'
+import React, { Component } from 'react'
 
 export default class Navbar extends Component {
   handleLogOut = async event => {
@@ -27,13 +27,16 @@ export default class Navbar extends Component {
             <a href="/" className="navbar-item">
               Home
             </a>
-            <a href="/CreatorBackground" className="navbar-item">
-              MyAccount
+            <a href="/MyProfile" className="navbar-item">
+              MyProfile
+            </a>
+            <a href="/CompanyProfile" className="navbar-item">
+              CompanyProfile
             </a>
             <a href="/projects" className="navbar-item">
-              Projects
+              ViewProjects
             </a>
-            <a href="/admin" className="navbar-item">
+            <a href="/AddProject" className="navbar-item">
               AddProject
             </a>
             <a href="https://mailchi.mp/85ec44736fc5/subscribeforupdates" target="_blank" className="navbar-item">

@@ -1,11 +1,9 @@
-import React, { Component, Fragment } from 'react'
-import { Formik, Field, Form, useField, FieldArray } from 'formik'
-import { TextField, Button, Checkbox, Radio, FormControlLabel, MenuItem, Select, Box, Tab, Tabs, Paper } from '@material-ui/core'
-import { withStyles, StylesProvider } from '@material-ui/core/styles'
+import { Button, FormControlLabel, Radio, TextField } from '@material-ui/core'
+import { StylesProvider } from '@material-ui/core/styles'
+import { Form, Formik, useField } from 'formik'
+import React from 'react'
 import * as Yup from 'yup'
-import { container } from 'aws-amplify'
-import FormikSelect, { FormikSelectItem } from '../utility/FormikSelect'
-import SimpleSelect from '../utility/MySelect.js'
+import FormikSelect from '../formikBits/FormikSelect'
 // const config = require('../config.json')
 
 const styles = {
@@ -129,7 +127,7 @@ const validationSchema = Yup.object({
   state: Yup.string().max(2).oneOf(stateAbbreviations, 'State abreviation is not valid')
 })
 
-function CreatorBackgroundForm() {
+function MyProfileForm() {
   return (
     <div className="center-form">
       <div className="center-form">
@@ -158,7 +156,7 @@ function CreatorBackgroundForm() {
             //if you use the form element, you can skip defining handleChange, handleBlur, and handleSubmit. They are defined by default by a utility.
             <Form className="my-form">
               <div className="inside-form">
-                <p className="subtitle is-4">MyAccount</p>
+                <p className="subtitle is-4">MyProfile</p>
                 <hr class="divider"></hr>
 
                 {/* TESTING HERE */}
@@ -240,4 +238,4 @@ function CreatorBackgroundForm() {
   )
 }
 
-export default CreatorBackgroundForm
+export default MyProfileForm

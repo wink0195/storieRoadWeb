@@ -50,18 +50,9 @@ body {
 }
 
 .inside-form {
-  padding: 0.5em;
-}
-
-.divider {
-  color: red;
-  border: none;
-  display: block;
-  line-height: 1.1876em;
-  margin: 1.5rem 0;
-  box-sizing: inherit;
-}
-
-.MuiButton-label {
-  border: black;
+  position: relative;
+  box-sizing: border-box;
+  width: 98.66668%;
+  top: 0.5em;
+  left: 0.66666%;
 }

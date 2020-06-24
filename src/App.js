@@ -1,23 +1,24 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
-import Navbar from './components/Navbar'
-import Home from './components/Home'
-import Projects from './components/Projects'
-import ProjectAdd from './components/ProjectAdd'
-import CreatorBackground from './components/CreatorBackground'
-import LogIn from './components/auth/LogIn'
-import Register from './components/auth/Register'
-import ForgotPassword from './components/auth/ForgotPassword'
-import ForgotPasswordVerification from './components/auth/ForgotPasswordVerification'
-import ChangePassword from './components/auth/ChangePassword'
-import ChangePasswordConfirm from './components/auth/ChangePasswordConfirm'
-import Welcome from './components/auth/Welcome'
-import Footer from './components/Footer'
-import { Auth } from 'aws-amplify'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import { Auth } from 'aws-amplify'
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css'
+import ChangePassword from './components/auth/ChangePassword'
+import ChangePasswordConfirm from './components/auth/ChangePasswordConfirm'
+import ForgotPassword from './components/auth/ForgotPassword'
+import ForgotPasswordVerification from './components/auth/ForgotPasswordVerification'
+import LogIn from './components/auth/LogIn'
+import Register from './components/auth/Register'
+import Welcome from './components/auth/Welcome'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
+import CompanyProfile from './components/pages/CompanyProfile'
+import Home from './components/pages/Home'
+import MyProfile from './components/pages/MyProfile'
+import ProjectAdd from './components/pages/ProjectAdd'
+import Projects from './components/pages/Projects'
+
 library.add(faEdit)
 
 //root parent component
@@ -66,8 +67,9 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" render={props => <Home {...props} auth={authProps} />} />
                 <Route exact path="/projects" render={props => <Projects {...props} auth={authProps} />} />
-                <Route exact path="/creatorbackground" render={props => <CreatorBackground {...props} auth={authProps} />} />
-                <Route exact path="/admin" render={props => <ProjectAdd {...props} auth={authProps} />} />
+                <Route exact path="/myprofile" render={props => <MyProfile {...props} auth={authProps} />} />
+                <Route exact path="/companyprofile" render={props => <CompanyProfile {...props} auth={authProps} />} />
+                <Route exact path="/addproject" render={props => <ProjectAdd {...props} auth={authProps} />} />
                 <Route exact path="/login" render={props => <LogIn {...props} auth={authProps} />} />
                 <Route exact path="/register" render={props => <Register {...props} auth={authProps} />} />
                 <Route exact path="/forgotpassword" render={props => <ForgotPassword {...props} auth={authProps} />} />
