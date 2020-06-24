@@ -117,6 +117,14 @@ const JobTitle_Types = [
   { label: 'Student', value: 'Student' }
 ]
 
+const JobCategory_Types = [
+  { label: '...', value: '' },
+  { label: 'Accounting/Finance', value: 'Accounting/Finance' },
+  { label: 'Acquisitions', value: 'Acquisitions' },
+  { label: 'Business affairs', value: 'Business affairs' },
+  { label: 'Casting', value: 'Casting' }
+]
+
 //VALIDATION
 const validationSchema = Yup.object({
   firstName: Yup.string().required().max(25),
@@ -136,11 +144,20 @@ function MyProfileForm() {
           initialValues={{
             firstName: '',
             lastName: '',
-            phoneNumber: '',
-            emailAddress: '',
             gender: '',
+            phoneType: '',
+            phoneNumber: '',
+            emailType: '',
+            emailAddress: '',
+            address1: '',
+            address2: '',
+            city: '',
+            state: '',
             zip: '',
-            state: ''
+            jobTitle: '',
+            jobDepartment: '',
+            jobCategory: '',
+            jobGuildAssociation: ''
           }}
           validationSchema={validationSchema}
           // isSubmitting & setSubmitting helps the user not spam the buttons
@@ -182,12 +199,12 @@ function MyProfileForm() {
                   <div class="wrapper">
                     <div>
                       {/* phone number */}
-                      <FormikSelect className="selectDd" name="phone_type" items={phone_typeItems} label="Phone Type" required />
+                      <FormikSelect className="selectDd" name="phoneType" items={phone_typeItems} label="Phone Type" required />
                       <MyTextField_ov name="phoneNumber" type="input" placeholder="phone number" />
                     </div>
                     <div>
                       {/* email */}
-                      <FormikSelect className="selectDd" name="email_type" items={email_typeItems} label="Email Type" required />
+                      <FormikSelect className="selectDd" name="emailType" items={email_typeItems} label="Email Type" required />
                       <MyTextField_ov name="emailAddress" type="input" placeholder="email address" />
                     </div>
                   </div>
@@ -211,12 +228,12 @@ function MyProfileForm() {
                   <div className="wrapper">
                     <FormikSelect className="selectDd" name="jobTitle" items={JobTitle_Types} label="Job Title" required />
                     {/* <MyTextField_ov name="title" type="input" placeholder="job title" /> */}
-                    <FormikSelect className="selectDd" name="jobTitle" items={JobTitle_Types} label="Job Title" required />
+                    <FormikSelect className="selectDd" name="jobCategory" items={JobCategory_Types} label="Job Category" required />
                     {/* <MyTextField_ov name="jobCategory" type="input" placeholder="job category" /> */}
                   </div>
                   <div className="wrapper">
-                    <MyTextField_ov name="department" type="input" placeholder="department" />
-                    <MyTextField_ov name="guildAssociation" type="input" placeholder="guild or association" />
+                    <MyTextField_ov name="jobDepartment" type="input" placeholder="department" />
+                    <MyTextField_ov name="jobGuildAssociation" type="input" placeholder="guild or association" />
                   </div>
                 </div>
 
