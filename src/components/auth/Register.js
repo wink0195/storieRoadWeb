@@ -50,6 +50,9 @@ class Register extends Component {
         }
       });
       console.log(signUpResponse)
+      
+      // TODO create user in mongodb from response
+
       this.props.history.push("/welcome");
 
     } catch(error) {

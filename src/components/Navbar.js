@@ -39,7 +39,7 @@ export default class Navbar extends Component {
             <a href="/AddProject" className="navbar-item">
               AddProject
             </a>
-            <a href="https://mailchi.mp/85ec44736fc5/subscribeforupdates" target="_blank" className="navbar-item">
+            <a href="https://mailchi.mp/85ec44736fc5/subscribeforupdates" target="_blank" rel="noopener" className="navbar-item">
               Newsletter
             </a>
           </div>

@@ -22,7 +22,7 @@ const MyRadio = ({ label, ...props }) => {
   )
 }
 
-const MyTextField_ov = ({ placeholder, ...props }) => {
+const MyTextFieldV2 = ({ placeholder, ...props }) => {
   const [field, meta] = useField(props)
   const errorText = meta.error && meta.touched ? meta.error : ''
   return (
@@ -176,14 +176,10 @@ function MyProfileForm() {
                 <p className="subtitle is-4">MyProfile</p>
                 <hr class="divider"></hr>
 
-                {/* TESTING HERE */}
-
-                {/* TESTING ENDS */}
-
                 <label>Name: </label>
                 <div className="br-name" class="sp-below" class="wrapper">
-                  <MyTextField_ov name="firstName" type="input" placeholder="first name*" />
-                  <MyTextField_ov name="lastName" type="input" placeholder="last name*" />
+                  <MyTextFieldV2 name="firstName" type="input" placeholder="first name*" />
+                  <MyTextFieldV2 name="lastName" type="input" placeholder="last name*" />
                 </div>
 
                 <label>Gender: </label>
@@ -200,12 +196,12 @@ function MyProfileForm() {
                     <div>
                       {/* phone number */}
                       <FormikSelect className="selectDd" name="phoneType" items={phone_typeItems} label="Phone Type" required />
-                      <MyTextField_ov name="phoneNumber" type="input" placeholder="phone number" />
+                      <MyTextFieldV2 name="phoneNumber" type="input" placeholder="phone number" />
                     </div>
                     <div>
                       {/* email */}
                       <FormikSelect className="selectDd" name="emailType" items={email_typeItems} label="Email Type" required />
-                      <MyTextField_ov name="emailAddress" type="input" placeholder="email address" />
+                      <MyTextFieldV2 name="emailAddress" type="input" placeholder="email address" />
                     </div>
                   </div>
                 </div>
@@ -213,13 +209,13 @@ function MyProfileForm() {
                 <div className="br-address" class="sp-below">
                   <label>Address: </label>
                   <div class="wrapper2">
-                    <MyTextField_ov name="address1" type="input" placeholder="address line 1" class="long-textInput" />
-                    <MyTextField_ov name="address2" type="input" placeholder="address line 2" />
+                    <MyTextFieldV2 name="address1" type="input" placeholder="address line 1" class="long-textInput" />
+                    <MyTextFieldV2 name="address2" type="input" placeholder="address line 2" />
                   </div>
                   <div className="br-cityStateZip" class="wrapper">
-                    <MyTextField_ov name="city" type="input" placeholder="city" />
-                    <MyTextField_ov name="state" type="input" placeholder="state abreviation" />
-                    <MyTextField_ov name="zip" type="input" placeholder="zip code*" />
+                    <MyTextFieldV2 name="city" type="input" placeholder="city" />
+                    <MyTextFieldV2 name="state" type="input" placeholder="state abreviation" />
+                    <MyTextFieldV2 name="zip" type="input" placeholder="zip code*" />
                   </div>
                 </div>
 
@@ -227,13 +223,13 @@ function MyProfileForm() {
                   <label>Career Information: </label>
                   <div className="wrapper">
                     <FormikSelect className="selectDd" name="jobTitle" items={JobTitle_Types} label="Job Title" required />
-                    {/* <MyTextField_ov name="title" type="input" placeholder="job title" /> */}
+                    {/* <MyTextFieldV2 name="title" type="input" placeholder="job title" /> */}
                     <FormikSelect className="selectDd" name="jobCategory" items={JobCategory_Types} label="Job Category" required />
-                    {/* <MyTextField_ov name="jobCategory" type="input" placeholder="job category" /> */}
+                    {/* <MyTextFieldV2 name="jobCategory" type="input" placeholder="job category" /> */}
                   </div>
                   <div className="wrapper">
-                    <MyTextField_ov name="jobDepartment" type="input" placeholder="department" />
-                    <MyTextField_ov name="jobGuildAssociation" type="input" placeholder="guild or association" />
+                    <MyTextFieldV2 name="jobDepartment" type="input" placeholder="department" />
+                    <MyTextFieldV2 name="jobGuildAssociation" type="input" placeholder="guild or association" />
                   </div>
                 </div>
 
@@ -245,8 +241,10 @@ function MyProfileForm() {
                 </div>
               </div>
 
-              <pre>Values: {JSON.stringify(values, null, 2)}</pre>
-              <pre>Errors: {JSON.stringify(errors, null, 2)}</pre>
+              <div class="oneToThree-column">
+                <pre>Values: {JSON.stringify(values, null, 2)}</pre>
+                <pre>Errors: {JSON.stringify(errors, null, 2)}</pre>
+              </div>
             </Form>
           )}
         </Formik>

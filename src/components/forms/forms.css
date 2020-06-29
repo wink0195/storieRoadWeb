@@ -35,6 +35,11 @@ label {
   grid-template-columns: 1fr 1fr;
 }
 
+.oneToThree-column {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
 body {
   text-align: center;
 }

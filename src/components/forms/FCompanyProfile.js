@@ -4,25 +4,8 @@ import { Form, Formik, useField } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
 import FormikSelect from '../formikBits/FormikSelect'
-// const config = require('../config.json')
 
-const styles = {
-  root: {
-    display: 'auto'
-  }
-}
-
-//custom fields
-const MyRadio = ({ label, ...props }) => {
-  const [field] = useField(props)
-  return (
-    // value={field.value} onChange={field.onChange} doesn't need to be defined if you use {...field}
-    // these are all the props that handle updating a field
-    <FormControlLabel {...field} control={<Radio />} label={label} />
-  )
-}
-
-const MyTextField_ov = ({ placeholder, ...props }) => {
+const MyTextFieldV2 = ({ placeholder, ...props }) => {
   const [field, meta] = useField(props)
   const errorText = meta.error && meta.touched ? meta.error : ''
   return (
@@ -35,20 +18,6 @@ const MyTextField_ov = ({ placeholder, ...props }) => {
         class="space"
       />
     </StylesProvider>
-  )
-}
-
-const MyTextField = ({ placeholder, ...props }) => {
-  const [field, meta] = useField(props)
-  const errorText = meta.error && meta.touched ? meta.error : ''
-  return (
-    <TextField
-      placeholder={placeholder}
-      {...field}
-      helperText={errorText}
-      error={!!errorText} //casting this string to a boolean
-      class="space"
-    />
   )
 }
 
@@ -159,28 +128,20 @@ function CompanyProfileForm() {
 
                 <label>Company: </label>
                 <div className="br-name" class="sp-below" class="wrapper">
-                  <MyTextField_ov name="companyName" type="input" placeholder="company name*" />
+                  <MyTextFieldV2 name="companyName" type="input" placeholder="company name*" />
                   <FormikSelect className="selectDd" name="company_type" items={company_typeItems} label="Company Type" required />
                 </div>
-
-                {/* <label>Gender: </label>
-                <div className="br-gender" class="sp-below">
-                  <MyRadio name="gender" type="radio" value="male" label="Male" />
-                  <MyRadio name="gender" type="radio" value="female" label="Female" />
-                  <MyRadio name="gender" type="radio" value="non-binary" label="Non-binary" />
-                  <MyRadio name="gender" type="radio" value="not-specified" label="Prefer to not say" />
-                </div> */}
 
                 <div className="br-address" class="sp-below">
                   <label>Address: </label>
                   <div class="wrapper2">
-                    <MyTextField_ov name="address1" type="input" placeholder="address line 1" class="long-textInput" />
-                    <MyTextField_ov name="address2" type="input" placeholder="address line 2" />
+                    <MyTextFieldV2 name="address1" type="input" placeholder="address line 1" class="long-textInput" />
+                    <MyTextFieldV2 name="address2" type="input" placeholder="address line 2" />
                   </div>
                   <div className="br-cityStateZip" class="wrapper">
-                    <MyTextField_ov name="city" type="input" placeholder="city" />
-                    <MyTextField_ov name="state" type="input" placeholder="state abreviation" />
-                    <MyTextField_ov name="zip" type="input" placeholder="zip code*" />
+                    <MyTextFieldV2 name="city" type="input" placeholder="city" />
+                    <MyTextFieldV2 name="state" type="input" placeholder="state abreviation" />
+                    <MyTextFieldV2 name="zip" type="input" placeholder="zip code*" />
                   </div>
                 </div>
 
@@ -190,12 +151,12 @@ function CompanyProfileForm() {
                     <div>
                       {/* phone number */}
                       <FormikSelect className="selectDd" name="company_type" items={company_typeItems} label="Company Type" required />
-                      <MyTextField_ov name="companyType" type="input" placeholder="company type" />
+                      <MyTextFieldV2 name="companyType" type="input" placeholder="company type" />
                     </div>
                     <div>
                       {/* email */}
                       <FormikSelect className="selectDd" name="email_type" items={email_typeItems} label="Email Type" required />
-                      <MyTextField_ov name="emailAddress" type="input" placeholder="email address" />
+                      <MyTextFieldV2 name="emailAddress" type="input" placeholder="email address" />
                     </div>
                   </div>
                 </div>
@@ -204,13 +165,13 @@ function CompanyProfileForm() {
                   <label>Career Information: </label>
                   <div className="wrapper">
                     <FormikSelect className="selectDd" name="jobTitle" items={JobTitle_Types} label="Job Title" required />
-                    {/* <MyTextField_ov name="title" type="input" placeholder="job title" /> */}
+                    {/* <MyTextFieldV2 name="title" type="input" placeholder="job title" /> */}
                     <FormikSelect className="selectDd" name="jobTitle" items={JobTitle_Types} label="Job Title" required />
-                    {/* <MyTextField_ov name="jobCategory" type="input" placeholder="job category" /> */}
+                    {/* <MyTextFieldV2 name="jobCategory" type="input" placeholder="job category" /> */}
                   </div>
                   <div className="wrapper">
-                    <MyTextField_ov name="department" type="input" placeholder="department" />
-                    <MyTextField_ov name="guildAssociation" type="input" placeholder="guild or association" />
+                    <MyTextFieldV2 name="department" type="input" placeholder="department" />
+                    <MyTextFieldV2 name="guildAssociation" type="input" placeholder="guild or association" />
                   </div>
                 </div>
 
