@@ -56,7 +56,7 @@ class Register extends Component {
       this.props.history.push("/welcome");
 
     } catch(error) {
-      let err = null;
+      let err = '';
       !error.message ? err = { "message": error } : err = error;
 
       this.setState({

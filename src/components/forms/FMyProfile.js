@@ -6,12 +6,6 @@ import * as Yup from 'yup'
 import FormikSelect from '../formikBits/FormikSelect'
 // const config = require('../config.json')
 
-const styles = {
-  root: {
-    display: 'auto'
-  }
-}
-
 //custom fields
 const MyRadio = ({ label, ...props }) => {
   const [field] = useField(props)
@@ -38,19 +32,19 @@ const MyTextFieldV2 = ({ placeholder, ...props }) => {
   )
 }
 
-const MyTextField = ({ placeholder, ...props }) => {
-  const [field, meta] = useField(props)
-  const errorText = meta.error && meta.touched ? meta.error : ''
-  return (
-    <TextField
-      placeholder={placeholder}
-      {...field}
-      helperText={errorText}
-      error={!!errorText} //casting this string to a boolean
-      class="space"
-    />
-  )
-}
+// const MyTextField = ({ placeholder, ...props }) => {
+//   const [field, meta] = useField(props)
+//   const errorText = meta.error && meta.touched ? meta.error : ''
+//   return (
+//     <TextField
+//       placeholder={placeholder}
+//       {...field}
+//       helperText={errorText}
+//       error={!!errorText} //casting this string to a boolean
+//       class="space"
+//     />
+//   )
+// }
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
