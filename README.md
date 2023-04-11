@@ -1,6 +1,4 @@
-## Orig Hexal Energy app - Modified to StorieRoadWeb App
-
-This is a starter ReactJS UI for my 'Create a Serverless App' tutorial series.
+## StorieRoadWeb App
 
 ## Application Info
 
